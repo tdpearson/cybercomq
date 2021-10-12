@@ -13,3 +13,8 @@ def add(x, y):
     """
     result = x + y
     return result
+
+
+@app.task(bind=True):
+def show_details():
+    return str(dir(self))
