@@ -16,5 +16,6 @@ def add(x, y):
 
 
 @app.task(bind=True)
-def show_details(self):
-    return str(dir(self))
+def get_queue_name(self):
+    """ Returns the name of the queue that this code is running under """
+    return self.request.delivery_info['routing_key']
