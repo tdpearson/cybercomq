@@ -15,6 +15,6 @@ def add(x, y):
     return result
 
 
-@app.task(bind=True):
+@app.task(bind=True)
 def show_details():
     return str(dir(self))
