@@ -15,6 +15,13 @@ def add(x, y):
     return result
 
 
+#Example task
+@app.task()
+def double(x):
+    """ Example task that doubles a number args: x """
+    return x * 2
+
+
 @app.task(bind=True)
 def get_queue_name(self):
     """ Returns the name of the queue that this code is running under """
